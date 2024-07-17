@@ -1,0 +1,12 @@
+Autor: Dannyfi Data:17/07/2024
+
+print('Cálculo da Multa ')
+velocidade = float(input('Quantos Km/h o carro estava: '))
+multa = (velocidade-80)*7
+
+if velocidade > 80:
+    print(f'Com a velocidade de {velocidade}km/h, você foi multado em R${multa}')
+elif velocidade == 80:
+    print(f'Andando a {velocidade}km/h você não foi multado por pouco! ')
+else:
+    print(f'Com a velocidade de {velocidade}km/h você não foi multado ')
