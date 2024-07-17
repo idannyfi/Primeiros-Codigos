@@ -1,0 +1,21 @@
+Autor Dannyfi Data:17/07/2024
+
+n1 = int(input('Primeiro número inteiro: '))
+n2 = int(input('Segundo número inteiro: '))
+n3 = int(input('Terceiro número inteiro: '))
+
+menor = n1
+if n2 < n1 and n2 < n3:
+    menor = n2
+if n3 < n1 and n3 < n2:
+    menor = n3
+
+print(f'O menor valor digitado foi {menor}')
+
+maior = n3
+if n2 > n1 and n2 > n3:
+    maior = n2
+if n1 > n2 and n1 > n3:
+    maior = n1
+
+print(f'O maior valor digitado foi {maior}')
