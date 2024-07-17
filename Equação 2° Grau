@@ -1,0 +1,11 @@
+Autor: Dannyfi  Data:17/07/2024
+
+print('Calculadora de Bhaskára')
+a = float(input('Qual valor de a: '))
+b = float(input('Qual valor de b: '))
+c = float(input('Qual valor de c: '))
+delta = (b**2-(4*a*c))
+x1 = (-b+(delta**(1/2)))/(2*a)
+x2 = (-b-(delta**(1/2)))/(2*a)
+print(f'O valor de Δ: é {delta:.2f}')
+print(f'Os valores de X são {x1:.3f} e {x2:.3f} ')
