@@ -1,12 +1,27 @@
-Autor Dannyfi Data:17/07/2024
+print('='*50)
+print('Que tipo de triângulo é ? ')
+print('='*50)
 
-print('Pode ser triângulo ou não ')
-r1 = float(input('Digite o tamanho do segmento 1: '))
-r2 = float(input('Digite o tamanho do segmento 2: '))
-r3 = float(input('Digite o tamanho do segmento 3: '))
+sg1 = float(input('Digite o primeiro segmento: '))
 
-if r1 > r2+r3 or r2 > r1 + r3 or r3 > r1 + r2:
-    print('Os segmentos não podem formam um triângulo! ')
+print('-'*50)
 
-else:
-    print('Os segmentos podem formar um triângulo! ')
+sg2 = float(input('Digite o segundo segmento: '))
+
+print('-'*50)
+
+sg3 = float(input('Digite o terceiro segmento: '))
+
+print('='*50)
+if sg1 >= (sg2+sg3) or sg2 >= (sg1+sg3) or sg3 >= (sg1+sg2):
+    print('Os segmento não podem formar um triângulo! ')
+elif ((sg1**2) + (sg2**2) == (sg3**2)) or ((sg1**2) + (sg3**2) == (sg2**2)) or ((sg2**2) + (sg3**2) == (sg1**2)):
+    print('O Triângulo é retângulo: ')
+elif sg1 == sg2 == sg3:
+    print('Os segmentos formam um triângulo equilátero: ')
+elif (sg1 == sg2 and sg2 != sg3) or (sg3 == sg2 and sg3 != sg1) or (sg1 == sg3 and sg1 != sg2):
+    print('Os segmentos formam um triângulo isósceles: ')
+elif (sg1 != sg2 and sg1 != sg3) or (sg3 != sg2 and sg3 != sg1) or (sg1 != sg3 and sg1 != sg2):
+    print('Os segmentos formam um triângulo escaleno: ')
+
+print('='*50)
