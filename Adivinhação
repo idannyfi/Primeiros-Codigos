@@ -1,0 +1,17 @@
+Autor Dannyfi Data:17/07/2024
+
+from random import randint
+from time import sleep
+
+print('='*50)
+print('Adivinhação!\nTente adivinhar o número que escolhi entre 0 e 5 ')
+print('='*50)
+num = randint(0,5)
+tentativa = int(input('Palpite: '))
+print('\033[0;35;40mProcessando...\033[m')
+sleep(3)
+
+if tentativa == num:
+    print(f'Você acertou! o número é {num} ')
+else:
+    print(f'Você errou! o número era {num} ')
