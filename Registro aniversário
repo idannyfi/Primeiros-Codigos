@@ -1,0 +1,16 @@
+Autor: Dannyfi Data:17/07/2024
+
+print('Registre sua data de aniversário!')
+dia = int(input('Qual Dia que você nasceu ?: '))
+mes = int(input('Qual Mês que você nasceu ?: '))
+ano = int(input('Qual Ano que você nasceu?: '))
+idade = (2024-ano)
+print(f'Sua data de Aniversário é {dia}/{mes}/{ano}')
+print(f'E você tem ou vai fazer {idade} anos')
+print('Correto? ')
+resposta = str(input('Sim ou Não? ')).strip().lower()
+if resposta in ['s','ss','sim']:
+   print('Obrigado! ')
+else: 
+    print('Você não digitou errado algo? ')
+   
