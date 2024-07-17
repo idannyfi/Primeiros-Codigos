@@ -1,0 +1,8 @@
+Autor: Dannyfi Data:17/07/2024
+
+print('obs: Se quiser descontar o valor do sálario digite - na porcentagem!')
+salario = float(input('Digite valor do seu salário R$ '))
+porcentagem = float(input('Digite o valor do aumento em % '))
+aumento = (salario*(porcentagem/100))
+print(f'O valor do seu salario com reajuste de {aumento}% será R${salario+aumento}! ')
+
