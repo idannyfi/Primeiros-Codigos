@@ -1,0 +1,14 @@
+Autor Dannyfi Data:17/07/2024
+
+from random import choice
+nome1 = (input('Digite o primeiro nome: ')).strip()
+nome2 = (input('Digite o segundo nome: ')).strip()
+nome3 = (input('Digite o terceiro nome: ')).strip()
+nome4 = (input('Digite o quarto nome: ')).strip()
+
+nomes = [nome1, nome2, nome3, nome4]
+
+sorteado = choice(nomes)
+print('='*30)
+print(f'O aluno sorteado foi {sorteado.title()}!')
+print('='*30)
