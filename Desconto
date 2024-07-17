@@ -1,0 +1,7 @@
+Autor: Dannyfi Data:17/07/2024
+
+preco = float(input('Digite o Valor do Produto R$ '))
+porcentagem = float(input('Digite o Valor do desconto em % '))
+desconto = (preco*(porcentagem/100))
+print(f'O valor do desconto será: R${desconto:.2f} ')
+print(f'Logo seu produto custará R${preco-desconto:.2f}! ')
