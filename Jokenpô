@@ -1,0 +1,45 @@
+Autor: Dannyfi Data:18/07/2024
+
+from random import choice
+from time import sleep
+
+print('='*50)
+print('                 Jokenpô! ')
+print('='*50)
+
+lances = ['pedra','papel','tesoura']
+computador = choice(lances)
+
+print('-'*50)
+jogador = str(input('   Escolha Pedra, Papel, ou Tesoura: ')).strip().lower()
+print('-'*50)
+
+print('Eu Escolho...')
+sleep(2)
+
+print('-'*50)
+
+print(f'{computador.title()}!')
+
+print('-'*50)
+
+if jogador == 'pedra' and computador == 'pedra':
+    print('Empate')
+elif jogador == 'pedra' and computador == 'papel':
+    print('Você perdeu! ')
+elif jogador == 'pedra' and computador == 'tesoura':
+    print('Você ganhou! ')
+elif jogador == 'papel' and computador == 'papel':
+    print('Empate ')
+elif jogador == 'papel' and computador == 'pedra':
+    print('Você ganhou! ')
+elif jogador == 'papel' and computador == 'tesoura':
+    print('Você perdeu! ')
+elif jogador == 'tesoura' and computador == 'tesoura':
+    print('Empate')
+elif jogador == 'tesoura' and computador == 'pedra':
+    print('Você perdeu! ')
+elif jogador == 'tesoura' and computador == 'papel':
+    print('Você ganhou! ')
+
+print('='*50)
