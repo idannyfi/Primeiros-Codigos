@@ -1,0 +1,42 @@
+Autor: Dannyfi Data:18/07/2024
+
+import sys
+
+print('='*90)
+print(' Pagamento')
+print('='*90)
+
+valor = float(input('Valor do Produto R$: '))
+
+print('-'*90)
+
+pagamento = str(input('Forma de pagamento: ')).strip().lower()
+
+print('-'*90)
+
+if pagamento in ['cartão','cartao','']:
+    deb_cred = str(input('Débito ou Crédito: ')).strip().lower()
+    print('-'*90)
+
+if pagamento in ['dinheiro','cheque','avista','a vista']:
+    print(f'O valor a vista tem desconto de 10% ficando R${valor-(valor*0.10):.2f}')
+    print('='*90)
+    sys.exit()
+
+if deb_cred in ['debito','débito']:
+    print(f'O valor a vista no cartão tem um desconto de 5% ficando R${valor-(valor*0.05):.2f}')
+    print('='*90)
+    sys.exit()
+ 
+if deb_cred in ['credito','crédito']:
+    parcelado = int(input('Em quantas vezes?: '))
+
+print('-'*90)
+
+if parcelado <= 2:
+    print(f'O valor parcelado até 2x não tem acréscimo nem desconto vai ser duas de R${(valor/parcelado)}')
+elif parcelado >= 3:
+    print(f'O valor parcelado em 3x ou mais possui um acréscimo de 20%, ficando {parcelado} de R${((valor+(valor*0.20))/parcelado):.2f}')
+
+print('='*90)
+
