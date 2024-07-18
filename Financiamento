@@ -1,0 +1,26 @@
+Autor: Dannyfi  Data: 18/07/2024
+
+print('='*30)
+print('Simulador do Financiamento: ')
+print('='*30)
+
+valor = float(input('Digite o valor do financiamento: '))
+
+print('-'*30)
+
+salario = float(input('Digite o seu salário R$: '))
+
+print('-'*30)
+
+tempo = int(input('Em quantas vezes deseja parcelar: '))
+
+print('='*70)   
+
+parcela = valor/tempo
+
+if parcela >= (salario*0.30):
+    print(f'Ficará {parcela}, poŕem com o salário de {salario} não será possível financiar\nPois excede os limites de 30% ! ')      
+else:
+    print(f'Parcelando em {tempo} vezes, você pagará R${parcela:.0f} por mês. ')
+
+print('='*70)
