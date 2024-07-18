@@ -10,7 +10,7 @@ valor = float(input('Valor do Produto R$: '))
 
 print('-'*90)
 
-pagamento = str(input('Forma de pagamento: ')).strip().lower()
+pagamento = str(input('Forma de pagamento (Cartão, Dinheiro, Cheque ou Pix) : ')).strip().lower()
 
 print('-'*90)
 
@@ -18,7 +18,7 @@ if pagamento in ['cartão','cartao','']:
     deb_cred = str(input('Débito ou Crédito: ')).strip().lower()
     print('-'*90)
 
-if pagamento in ['dinheiro','cheque','avista','a vista']:
+if pagamento in ['dinheiro','cheque','avista','a vista','pix']:
     print(f'O valor a vista tem desconto de 10% ficando R${valor-(valor*0.10):.2f}')
     print('='*90)
     sys.exit()
