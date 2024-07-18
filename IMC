@@ -9,8 +9,8 @@ kg = float(input('Peso em Kg: '))
 print('-'*30)
 
 altura = float(input('Altura em cm: '))
-altura_real = (altura/10)**2
-imc = (kg/altura_real)*100
+altura_real = (altura/100)**2
+imc = (kg/altura_real)
 
 print('='*30)
 print(f'O seu IMC é {imc:.2f} ')
