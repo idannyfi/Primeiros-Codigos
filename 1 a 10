@@ -1,0 +1,51 @@
+Autor : Dannyfi Data:23/07/2024
+
+from time import sleep
+import sys
+
+
+confirm = str(input(('Vamos contar de 1 até 10? '))).strip().lower()
+
+if confirm in ['sim', 's', 'ss', 'vamos', 'vamo', 'bora', 'claro', 'com certeza']:
+    print('Vamos!')
+    for c in range(1, 11):
+        print(c)
+        if c == 7:
+            sleep(2)
+            print('Quase lá! ')
+        sleep(1)
+    sleep(1)
+    print('='*20)
+    print('       Fim!')
+    print('='*20)
+    sys.exit()
+
+if confirm in ['não', 'nao', 'nn', 'n' ]:
+    print('Vai Contar Sim!')
+    for c in range(1, 11):
+        print(c)
+        if c == 7:
+            sleep(2)
+            print('Quase lá! ')
+        sleep(1)
+    sleep(1)
+    print('='*20)
+    print('       Fim!')
+    print('='*20)
+    sys.exit()
+
+else:
+    print('Não entendi mas vamos mesmo assim! ')
+    for c in range(1, 11):
+        print(c)
+        if c == 7:
+            sleep(2)
+            print('Quase lá! ')
+        sleep(1)
+    sleep(1)
+    print('='*20)
+    print('       Fim!')
+    print('='*20)
+    sys.exit()
+
+    
