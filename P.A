@@ -1,0 +1,16 @@
+Autor: Dannyfi Data:23/07/2024
+
+import sys
+
+print('Progressão Aritmética')
+
+inicial = int(input('Primeiro termo da P.A: '))
+razao = int(input('Razão da P.A: '))
+enesimo = int(input('Enésimo termo da P.A: '))
+
+termogeral = inicial+(enesimo - 1) * razao
+
+for c in range(inicial, (termogeral) + 1, razao):
+    print(f'{c}', end=' > ')
+print(' Fim!')
+sys.exit()
