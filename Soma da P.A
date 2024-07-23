@@ -1,0 +1,14 @@
+Autor: Dannyfi Data:23/07/2024
+
+import sys
+
+primeiro = int(input('Digite o Primeiro Termo da P.A: '))
+razao = int(input('Digite a razão da P.A: '))
+enesimo = int(input('Digite o termo enésimo da P.A: '))
+
+termogeral = primeiro + (enesimo - 1)*razao
+
+soma = ((primeiro + termogeral)*enesimo)/2
+
+print(f'A soma da P.A de primeiro termo ({primeiro}) e último termo ({termogeral})\nRazão ({razao}) = ({soma})')
+sys.exit()
