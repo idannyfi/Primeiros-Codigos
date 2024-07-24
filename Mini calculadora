@@ -1,0 +1,65 @@
+Autor: Danny Data:24/07/2024
+
+import sys
+from time import sleep
+
+while True:
+    try:
+        print('='*50)
+        numero1 = int(input('Digite primeiro número \033[032minteiro\033[m: '))
+        print('='*50)
+        numero2 = int(input('Digite segundo número \033[032minteiro\033[m: '))
+        print('='*50)
+        entrada = int(input(('Digite o \033[033mnúmero\033[m que deseja para realizar \033[031mação\033[m:'
+              '\n=================================================='
+              '\n   \033[035m[ 1 ] Somar '
+              '\n   [ 2 ] Subtrair '
+              '\n   [ 3 ] Multiplicar '
+              '\n   [ 4 ] Dividir '
+              '\n   [ 5 ] Tentar outros valores'  
+              '\n   [ 6 ] Sair \033[m'
+              '\n=================================================='
+              '\n   \033[033mInsira a opção\033[m: '
+                        
+        )))
+        if entrada == 1:
+            print('='*50)
+            print(f'   A \033[035msoma\033[m entre {numero1} e {numero2} = {numero1 + numero2} ')
+            print('='*50)
+            sys.exit()
+        elif entrada == 2:
+            print('='*50)
+            print(f'   A \033[035msubtração\033[m entre {numero1} e {numero2} = {numero1 - numero2} ')
+            print('='*50)
+            sys.exit()
+
+        elif entrada == 3:
+            print('='*50)
+            print(f'   A \033[035mmultiplicão\033[m entre {numero1} e {numero2} = {numero1 * numero2}')
+            print('='*50)
+            sys.exit()
+
+        elif entrada == 4:
+            print('='*50)
+            print(f'   A \033[035mdivisão\033[m de {numero1} por {numero2} = {numero1 / numero2:.2f}')
+            print('='*50)
+
+        elif entrada == 5:
+            continue
+
+        elif entrada == 6:
+            print('='*50)
+            print('                \033[035mSaindo...')
+            sleep(2)
+            print('')
+            sys.exit()
+
+        if entrada < 1 or entrada > 6:
+            print('='*50)
+            print('\033[031mEntrada Inválida! Tente novamente\033[m ')
+            continue
+            
+
+        break
+    except ValueError:
+        print('\033[031mEntrada inválida, Tente novamente!\033[m')
