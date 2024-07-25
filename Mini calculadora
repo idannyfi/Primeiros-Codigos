@@ -25,24 +25,25 @@ while True:
         if entrada == 1:
             print('='*50)
             print(f'   A \033[035msoma\033[m entre {numero1} e {numero2} = {numero1 + numero2} ')
-            print('='*50)
-            sys.exit()
+            
+            continue
         elif entrada == 2:
             print('='*50)
             print(f'   A \033[035msubtração\033[m entre {numero1} e {numero2} = {numero1 - numero2} ')
-            print('='*50)
-            sys.exit()
+            
+            continue
 
         elif entrada == 3:
             print('='*50)
             print(f'   A \033[035mmultiplicão\033[m entre {numero1} e {numero2} = {numero1 * numero2}')
-            print('='*50)
-            sys.exit()
+            
+            continue
 
         elif entrada == 4:
             print('='*50)
             print(f'   A \033[035mdivisão\033[m de {numero1} por {numero2} = {numero1 / numero2:.2f}')
-            print('='*50)
+            
+            continue
 
         elif entrada == 5:
             continue
@@ -54,7 +55,7 @@ while True:
             print('')
             sys.exit()
 
-        if entrada < 1 or entrada > 6:
+        elif entrada < 1 or entrada > 6:
             print('='*50)
             print('\033[031mEntrada Inválida! Tente novamente\033[m ')
             continue
@@ -63,3 +64,5 @@ while True:
         break
     except ValueError:
         print('\033[031mEntrada inválida, Tente novamente!\033[m')
+
+
