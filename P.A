@@ -2,15 +2,26 @@ Autor: Dannyfi Data:23/07/2024
 
 import sys
 
-print('Progressão Aritmética')
+print('='*35)
+print('Progressão Aritmética melhorada! ')
+print('='*35)
 
-inicial = int(input('Primeiro termo da P.A: '))
+primeiro = int(input('Primeiro Termo: '))
 razao = int(input('Razão da P.A: '))
-enesimo = int(input('Enésimo termo da P.A: '))
+termo = primeiro
+count = 1
+total = 0
+seguindo = 10
 
-termogeral = inicial+(enesimo - 1) * razao
+while seguindo != 0:
+    total = total + seguindo
+    while count <= total:
+        print(f' {termo} > ',end='')
+        termo = termo + razao
+        count = count + 1
+    print('\033[033mEsperando...\033[m')
+    seguindo = int(input('Quantos termos a mais você deseja?: '))
+print(f'P.A finalizada, o total de termos foi {total}')
 
-for c in range(inicial, (termogeral) + 1, razao):
-    print(f'{c}', end=' > ')
-print(' Fim!')
 sys.exit()
+
