@@ -1,45 +1,65 @@
-Autor: Dannyfi Data:18/07/2024
+Autor: Dannyfi Data:25/07/2024
 
+import sys
 from random import choice
 from time import sleep
 
-print('='*50)
-print('                 Jokenpô! ')
-print('='*50)
-
-lances = ['pedra','papel','tesoura']
-computador = choice(lances)
-
-print('-'*50)
-jogador = str(input('   Escolha Pedra, Papel, ou Tesoura: ')).strip().lower()
-print('-'*50)
-
-print('Eu Escolho...')
-sleep(2)
-
-print('-'*50)
-
-print(f'{computador.title()}!')
-
-print('-'*50)
-
-if jogador == 'pedra' and computador == 'pedra':
-    print('Empate')
-elif jogador == 'pedra' and computador == 'papel':
-    print('Você perdeu! ')
-elif jogador == 'pedra' and computador == 'tesoura':
-    print('Você ganhou! ')
-elif jogador == 'papel' and computador == 'papel':
-    print('Empate ')
-elif jogador == 'papel' and computador == 'pedra':
-    print('Você ganhou! ')
-elif jogador == 'papel' and computador == 'tesoura':
-    print('Você perdeu! ')
-elif jogador == 'tesoura' and computador == 'tesoura':
-    print('Empate')
-elif jogador == 'tesoura' and computador == 'pedra':
-    print('Você perdeu! ')
-elif jogador == 'tesoura' and computador == 'papel':
-    print('Você ganhou! ')
 
 print('='*50)
+print('                 \033[35mJokenpô!\033[m ')
+print('='*50)
+
+lances = ['pedra', 'papel', 'tesoura']
+
+while True:
+    try:
+        print('-'*50)
+
+        jogador = str(input('   Escolha \033[32mPedra\033[m, \033[34mPapel\033[m, ou \033[35mTesoura\033[m: ')).strip().lower()
+
+        if jogador not in lances:
+            print('\033[031mEscolha inválida! Tente novamente.\033[m')
+            continue
+
+        computador = choice(lances)
+
+        print('-'*50)
+        sleep(1)
+        print('     \033[32mJO\033[m')
+        sleep(1)
+        print('     \033[33mKEN\033[m')
+        sleep(1)
+        print('     \033[35mPÔ!!\033[m')
+
+        print('-'*50)
+
+        print(f'Computador: {computador.title()}')
+        print(f'Jogador: {jogador.title()}')
+
+        print('-'*50)
+
+        if jogador == computador:
+            print('\033[34mEmpate!\033[m')
+        
+        elif (jogador == 'pedra' and computador == 'tesoura') or \
+             (jogador == 'papel' and computador == 'pedra') or \
+             (jogador == 'tesoura' and computador == 'papel'):
+            print('\033[32mVocê ganhou!\033[m')
+        
+        else:
+            print('\033[31mVocê perdeu!\033[m')
+
+        print('-'*50)
+
+        continuar = str(input('Vai continuar? (Sim/Não): ')).strip().lower()
+
+        if continuar in ['não', 'nao', 'n']:
+            print('\033[34mSaindo...\033[m')
+            sleep(2)
+            print('')
+            sys.exit()  
+
+    except ValueError:
+        print('\033[031mEntrada inválida! Tente novamente.\033[m')
+
+
