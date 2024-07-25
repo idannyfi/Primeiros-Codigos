@@ -1,0 +1,67 @@
+Autor: Dannyfi Data:17/07/2024
+
+import sys
+from time import sleep
+
+print('-'*30)
+print('  \033[033mConversor de Temperatura\033[m')
+print('-'*30)
+while True:
+   try:
+      valor = float(input('   Digite a Temperatura: '))
+      print('-'*30)
+      tipo = str(input(' Está em Qual \033[032mUnidade de medida?\033[m'
+                       '\n-------------------------------'
+                       '\n \033[034m[Celsius, Farenheit, Kelvin]\033[m: '
+                       '\n-------------------------------'
+                       '\n Insira Aqui: ')).strip().lower()[0]
+                       
+      celsius = 5 / 9 * (valor - 32)
+      farenheit = (9 / 5 * valor) + 32 
+      
+
+      pergunta = int(input('\033[033mPara qual deseja converter?'
+                           '\n[ 1 ] Farenheit'
+                           '\n[ 2 ] Celsius '
+                           '\n[ 3 ] Kelvin '
+                           '\n[ 4 ] Digitar Novamente'
+                           '\n[ 5 ] Sair '
+                           '\nInsira sua opção:\033[m '))
+      
+      if tipo in ['c', 'celsius'] and pergunta == 1:
+         print(f' {valor}° {tipo.title()} em Farenheit são {farenheit:.2f}')
+      elif tipo in ['c', 'celsius'] and pergunta == 2:
+         print(f' {valor}° {tipo.title()} Já está em Celsius!')
+      elif tipo in ['c', 'celsius'] and pergunta == 3:
+         print(f' {valor}° {tipo.title()} em Kelvin são {valor + 273.15:.2f}')
+
+
+      elif tipo in ['f', 'farenheit'] and pergunta == 1:
+         print(f' {valor}° {tipo.title()} Já está em farenheit! ')
+      elif tipo in ['f', 'farenheit'] and pergunta == 2:
+         print(f' {valor}° {tipo.title()} em Celsius são {celsius:.2f}')
+      elif tipo in ['f', 'farenheit'] and pergunta == 3:
+         print(f' {valor}° {tipo.title()} em Kelvin são {(valor - 32) *5/9 + 273.15 :.2f}')
+
+
+      elif tipo in ['k','kelvin'] and pergunta == 1:
+         print(f' {valor}° {tipo.title()} em Farenheit são {(valor - 273.15) * 9/5 +32 :.2f}')
+      elif tipo in ['k','kelvin'] and pergunta == 2:
+         print(f' {valor}° {tipo.title()} em Celsius são {valor - 273.15:.2f}')
+      elif tipo in ['k','kelvin'] and pergunta == 3:
+         print(f' {valor}e {tipo.title()} Já está em Kelvin!')
+
+      elif pergunta == 4:
+         continue
+
+      elif pergunta == 5:
+         print(f'\033[035m Saindo...\033[m')
+         sleep(2)
+         sys.exit()
+      else:
+         print('\033[031mDado inválido! \033[m')
+         continue
+
+   except ValueError:
+      print(f'\033[031mVocê digitou um valor inválido!\033[m ')
+
