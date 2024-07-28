@@ -4,6 +4,11 @@ import sys
 from random import choice
 from time import sleep
 
+vitoria = 0
+derrota = 0
+empate = 0
+partidas = 0
+
 
 print('='*50)
 print('                 \033[35mJokenpô!\033[m ')
@@ -15,7 +20,9 @@ while True:
     try:
         print('-'*50)
 
-        jogador = str(input('   Escolha \033[32mPedra\033[m, \033[34mPapel\033[m, ou \033[35mTesoura\033[m: ')).strip().lower()
+        jogador = str(input('   Escolha \033[32mPedra\033[m, \033[34mPapel\033[m, ou \033[35mTesoura\033[m:' 
+                            '\n'
+                            '\n   Insira sua jogada: ')).strip().lower()
 
         if jogador not in lances:
             print('\033[031mEscolha inválida! Tente novamente.\033[m')
@@ -40,22 +47,34 @@ while True:
 
         if jogador == computador:
             print('\033[34mEmpate!\033[m')
+            empate = empate + 1
+            partidas = partidas + 1
         
         elif (jogador == 'pedra' and computador == 'tesoura') or \
              (jogador == 'papel' and computador == 'pedra') or \
              (jogador == 'tesoura' and computador == 'papel'):
+            vitoria = vitoria + 1
+            partidas = partidas + 1
             print('\033[32mVocê ganhou!\033[m')
         
         else:
             print('\033[31mVocê perdeu!\033[m')
+            derrota = derrota + 1
+            partidas = partidas + 1
 
         print('-'*50)
 
-        continuar = str(input('Vai continuar? (Sim/Não): ')).strip().lower()
+        continuar = str(input('Vai continuar? (Sim/Não): ')).strip().lower()[0]
 
-        if continuar in ['não', 'nao', 'n']:
+        if continuar in ['n']:
             print('\033[34mSaindo...\033[m')
             sleep(2)
+            print(f'''                  
+                  Num total de {partidas} partidas
+                  Você perdeu {derrota} rodadas
+                  Você ganhou {vitoria} rodadas
+                  Jogo empatou {empate} rodadas''')
+                
             print('')
             sys.exit()  
 
