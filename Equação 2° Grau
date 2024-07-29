@@ -1,11 +1,31 @@
-Autor: Dannyfi  Data:17/07/2024
+Autor: Dannyfi  Data: 29/07/2024
 
-print('Calculadora de Bhaskára')
-a = float(input('Qual valor de a: '))
-b = float(input('Qual valor de b: '))
-c = float(input('Qual valor de c: '))
-delta = (b**2-(4*a*c))
-x1 = (-b+(delta**(1/2)))/(2*a)
-x2 = (-b-(delta**(1/2)))/(2*a)
-print(f'O valor de Δ: é {delta:.2f}')
-print(f'Os valores de X são {x1:.3f} e {x2:.3f} ')
+import sys
+from time import sleep
+
+while True:
+    try:
+        print('')
+        print('\033[35m  *Calculadora de Bhaskára*\033[m')
+        print('')
+        a = float(input('Qual valor de a: '))
+        b = float(input('Qual valor de b: '))
+        c = float(input('Qual valor de c: '))
+        
+        delta = (b**2-(4*a*c))
+        x1 = (-b + (delta ** (1/2))) / (2 * a)
+        x2 = (-b - (delta ** (1/2))) / (2 * a)
+        
+        print('')
+        print('\033[034mCalculando...\033[m')
+        print('')
+        sleep(2)
+
+        print(f'O valor de \033[032m delta (Δ) \033[m: é {delta:.2f}') 
+        print(f'Os valores de \033[033mX\033[m são {x1:.3f} e {x2:.3f} ')
+        print('')   
+    
+    except ValueError:
+        print('')
+        print('\033[031mEntrada Inválida,  Tente Novamente!\033[031m ')
+        print('')
