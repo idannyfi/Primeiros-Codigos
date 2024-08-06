@@ -1,0 +1,60 @@
+Autor: Dannyfi  Data: 5/8/2024
+
+import sys
+from time import sleep
+
+print(''
+      )
+print('===:\033[032mCalculadora do imposto\033[m:===')
+
+while True:
+    try: 
+        print(''
+              )
+        porhora = float(input('Quanto você ganha por hora?\033[32mR$\033[m: '))
+        print(''
+              )
+        horas = int(input('Quantas horas você trabalha por dia?: '))
+
+        mes = (horas * 7) * 4
+        salario = (porhora * mes)
+
+        imposto_de_renda = (11/100)
+        inss = (8/100)
+        sindicato = (5/100)
+
+        imposto_total = (imposto_de_renda + inss + sindicato)
+
+        print('\033[033mCalculando...\033[m')
+        sleep(1)
+        
+        print(f'''
+
+        °    Seu salário \033[032mbruto\033[m --> \033[32mR$\033[m{salario:.2f}
+        °    O valor do imposto de renda --> \033[32mR$\033[m{(imposto_de_renda * salario):.2f}
+        °    O valor do INSS --> \033[32mR$\033[m{(salario * inss) :.2f}
+        °    O valor do imposto do sindicato --> \033[32mR$\033[m{(salario * sindicato):.2f}
+        °    Seu salário \033[034mlíquido\033[m -->s \033[32mR$\033[m{salario - (salario * imposto_total):.2f}
+
+        ''')
+        continuar = ''
+        while continuar not in ['s','n']:
+            continuar = str(input('\033[33mContinuar?[S/N]\033[m: ')).strip().lower()[0]
+            
+        if continuar in ['s']:
+            continue
+
+        elif continuar in ['n']:
+            print(f'\033[035mSaindo...\033[m')
+            sleep(2)
+            print(''
+                  )
+            sys.exit()
+
+    except ValueError:
+        print(''
+              )
+        print('\033[031mEntrada Inválida, Tente Novamente\033[m')
+        print(''
+              )
+
