@@ -1,42 +1,115 @@
 Autor: Dannyfi Data:18/07/2024
 
 import sys
+from time import sleep
 
 print('='*90)
-print(' Pagamento')
+print('                                   \033[032mPagamento\033[m')
 print('='*90)
 
-valor = float(input('Valor do Produto R$: '))
+while True:
+    try:
+        valor = float(input('Valor do Produto R$: '))
 
-print('-'*90)
+        print('-'*90)
 
-pagamento = str(input('Forma de pagamento (Cartão, Dinheiro, Cheque ou Pix) : ')).strip().lower()
+        pagamento = ''
+        while pagamento not in ['car', 'din', 'pix', 'che', 'avi', 'vis']:
+            pagamento = str(input('Forma de pagamento (Cartão, Dinheiro, Cheque, Pix): ')).strip().lower()[:3]
 
-print('-'*90)
+        print('-'*90)
 
-if pagamento in ['cartão','cartao','']:
-    deb_cred = str(input('Débito ou Crédito: ')).strip().lower()
-    print('-'*90)
+        if pagamento in ['car']:
+            deb_cred = ''
+            while deb_cred not in ['deb', 'cre']:   
+                deb_cred = str(input('Débito ou Crédito: ')).strip().lower()[:3]
+                print('-'*90)
 
-if pagamento in ['dinheiro','cheque','avista','a vista','pix']:
-    print(f'O valor a vista tem desconto de 10% ficando R${valor-(valor*0.10):.2f}')
-    print('='*90)
-    sys.exit()
+        elif pagamento in ['din', 'pix', 'che', 'vis', 'avi']:
+            print(f'O valor a vista tem desconto de 10% ficando R${valor - (valor * 0.10):.2f}')
+            print('='*90)
+            
+            continuar = ''
+            while continuar not in ['s', 'n']:
+                print(''
+                      )
+                continuar = str(input('Quer Fazer Outro Pagamento?[S/N]: ')).strip().lower()[0]
+                print(''
+                      )
+            
+            if continuar in ['s']:
+                continue
 
-if deb_cred in ['debito','débito']:
-    print(f'O valor a vista no cartão tem um desconto de 5% ficando R${valor-(valor*0.05):.2f}')
-    print('='*90)
-    sys.exit()
- 
-if deb_cred in ['credito','crédito']:
-    parcelado = int(input('Em quantas vezes?: '))
+            elif continuar in ['n']:
+                print(''
+                    )
+                print('\033[034mSaindo...\033[m')
+                print(''
+                    )
+                sys.exit() 
+            
+            
 
-print('-'*90)
+        if deb_cred in ['deb']:
+            print(f'O valor a vista no cartão tem um desconto de 5% ficando R${valor - (valor * 0.05):.2f}')
+            print('='*90)
+            
+            continuar = ''
+            while continuar not in ['s', 'n']:
+                print(''
+                      )
+                continuar = str(input('Quer Fazer Outro Pagamento?[S/N]: ')).strip().lower()[0]
+                print(''
+                      )
+            
+            if continuar in ['s']:
+                continue
 
-if parcelado <= 2:
-    print(f'O valor parcelado até 2x não tem acréscimo nem desconto vai ser duas de R${(valor/parcelado)}')
-elif parcelado >= 3:
-    print(f'O valor parcelado em 3x ou mais possui um acréscimo de 20%, ficando {parcelado} de R${((valor+(valor*0.20))/parcelado):.2f}')
+            elif continuar in ['n']:
+                print(''
+                    )
+                print('\033[034mSaindo...\033[m')
+                print(''
+                    )
+                sys.exit() 
+        
+        
+        if deb_cred in ['cre']:
+            parcelado = int(input('Em quantas vezes?: '))
 
-print('='*90)
+        print('-'*90)
+
+        if parcelado <= 2:
+            print(f'O valor parcelado até 2x não tem acréscimo nem desconto vai ser duas de R${(valor / parcelado)}')
+        elif parcelado >= 3:
+            print(f'O valor parcelado em 3x ou mais possui um acréscimo de 20%, ficando {parcelado}x de R${((valor + (valor * 0.20)) / parcelado):.2f}')
+
+
+        continuar = ''
+        while continuar not in ['s', 'n']:
+            print(''
+                  )
+            continuar = str(input('Quer Fazer Outro Pagamento?[S/N]: ')).strip().lower()[0]
+            print(''
+                  )
+        
+        if continuar in ['s']:
+            continue
+
+        elif continuar in ['n']:
+            print(''
+                  )
+            print('\033[034mSaindo...\033[m')
+            print(''
+                  )
+            sys.exit() 
+
+
+        print('='*90)
+    except ValueError:
+        print(''
+              )
+        print('\033[031mEntrada Inválida, Tente Novamente\033[m')
+        print(''
+              )
 
