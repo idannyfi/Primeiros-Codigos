@@ -1,7 +1,39 @@
 Autor: Dannyfi Data:17/07/2024
 
-preco = float(input('Digite o Valor do Produto R$ '))
-porcentagem = float(input('Digite o Valor do desconto em % '))
-desconto = (preco*(porcentagem/100))
-print(f'O valor do desconto será: R${desconto:.2f} ')
-print(f'Logo seu produto custará R${preco-desconto:.2f}! ')
+import sys
+from time import sleep
+
+while True: 
+    try:
+        valor = float(input('Digite o Valor do Produto R$: '))
+        porcentagem = float(input('Digite o Valor do desconto em %: '))
+        
+        desconto = (valor * (porcentagem / 100))
+
+        print(f'''
+        O valor do desconto --> R${desconto :.2f}
+        O valor final do produto --> R${valor - desconto :.2f}
+''')
+
+        continuar = ''
+        while continuar not in ['s', 'n']:
+            continuar = str(input('Quer continuar?[S/N]: ')).strip().lower()[0]
+
+        if continuar in ['s']:
+            continue
+
+        elif continuar in ['n']:
+            print('Saindo...')
+            sleep(2)
+            print(''
+                  )
+            sys.exit()
+
+    except ValueError:
+        print(''
+              )
+        print('Entrada Inválida, Tente Novamente')
+        print(''
+              )
+
+
