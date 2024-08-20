@@ -1,0 +1,121 @@
+Autor: Dannyfi Data:20/08/2024
+
+from sys import exit
+from time import sleep
+
+print('')
+print('-= Calculadora Relações Geométricas =-')
+print('')
+
+while True:
+    try:
+        info = ''
+        while info not in ['f', 'l', 'a', 'v']:
+            info = str(input('Qual informação irá fornecer [Lado da Base/Face/Vértice/Aresta]: ')).strip().lower()[0]
+        
+        num = int(input('Quantidade: '))
+        
+        tipo = ''
+        while tipo not in [1, 2, 3, 4]:
+            tipo = int(input('''
+        Qual tipo de Sólido?
+        [ 1 ] Pirâmide
+        [ 2 ] Prisma
+        [ 3 ] Selecionar denovo
+        [ 4 ] Sair
+
+        Entrada: '''))
+            
+        print('''
+                Calculando...
+              ''')
+        sleep(1)
+            
+        if tipo == 1 and info in ['f']:
+            print(f'''
+            Arestas = {(num - 1) * 2}
+            Vértices = {num}
+            Faces = {num}
+            ''')
+
+        elif tipo == 1 and info in ['l']:
+             print(f'''
+            Arestas = {num * 2}
+            Vértices = {num + 1}
+            Faces = {num + 1}
+            ''')
+                 
+        elif tipo == 1 and info in ['a']:
+             print(f'''
+            Arestas = {num}
+            Vértices = {(num / 2) + 1:.0f}
+            Faces = {(num / 2) + 1:.0f}
+            ''')
+        
+        elif tipo == 1 and info in ['v']:
+             print(f'''
+            Arestas = {(num - 1) * 2}
+            Vértices = {num:.0f}
+            Faces = {num:.0f}
+            ''')
+             
+             
+        elif tipo == 2 and info in ['l']:
+             print(f'''
+            Arestas = {num * 3}
+            Vértices = {num * 2}
+            Faces = {num + 2}
+            ''')
+             
+        elif tipo == 2 and info in ['f']:
+             print(f'''
+            Arestas = {(num - 2) * 3}
+            Vértices = {(num - 2) * 2}
+            Faces = {num}
+            ''')
+             
+        elif tipo == 2 and info in ['a']:
+             print(f'''
+            Arestas = {num}
+            Vértices = {(num / 3) * 2:.0f}
+            Faces = {(num / 3) + 2:.0f}
+            ''')
+             
+        elif tipo == 2 and info in ['v']:
+             print(f'''
+            Arestas = {(num / 2) * 3:.0f}
+            Vértices = {num}
+            Faces = {(num / 2) + 2:.0f}
+            ''')
+                  
+        elif tipo == 3:
+            continue
+
+        elif tipo == 4:
+            print('')
+            print('Saindo...')
+            print('')
+            sleep(1)
+            exit()
+
+        continuar = ''
+        while continuar not in ['s', 'n']:
+            print('')
+            continuar = str(input('Quer Continuar?[S/N]: ')).strip().lower()[0]
+            print('')
+
+        if continuar in ['s']:
+            continue
+
+        elif continuar in ['n']:
+            print('')
+            print('Saindo...')
+            print('')
+            sleep(2)
+            exit()
+
+    except ValueError:
+        print('')
+        print('Entrada Inválida, Tente Novamente')
+        print('')
+
